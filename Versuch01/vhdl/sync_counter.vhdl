@@ -8,7 +8,7 @@ port (
     clock_enable : in std_ulogic;
     reset: in std_ulogic;
 
-    q: out std_ulogic_vector(3 downto 0);
+    q: out std_ulogic_vector(3 downto 0)
 );
 end sync_counter;
 
@@ -30,7 +30,7 @@ architecture rtl of sync_counter is
     end component;
 
     -- Signals
-    signal clk_wire, clk_enable_wire, reset_wire: std_ulogic;
+    signal clk_wire, clk_enable_wire, reset_wire, not_reset_wire, and_in_t3, and_in_t2: std_ulogic;
     signal q_wire: std_ulogic_vector(3 downto 0);
 
 begin
@@ -38,52 +38,64 @@ begin
 -- Instantiate components
 JK_FF_0: ff_jk
 port map(
-    j => CLAMP_UP;
-    k => CLAMP_UP;
-    clrn => not reset_wire;
-    prn => CLAMP_UP;
-    clk => rising_edge(clk_wire);
-    ena => clk_enable_wire;
-    q => q_wire(0);
+    j => CLAMP_UP,
+    k => CLAMP_UP,
+    clk => clk_wire,
+    ena => clk_enable_wire,
+    clrn => not_reset_wire,
+    prn => CLAMP_UP,
+    q => q_wire(0)
 );
 
 JK_FF_1: ff_jk
 port map(
-    j => q_wire(0);
-    k => q_wire(0);
-    clrn => not reset_wire;
-    prn => CLAMP_UP;
-    clk => rising_edge(clk_wire);
-    ena => clk_enable_wire;
-    q => q_wire(1);
+    j => q_wire(0),
+    k => q_wire(0),
+    clk => clk_wire,
+    ena => clk_enable_wire,
+    clrn => not_reset_wire,
+    prn => CLAMP_UP,
+    q => q_wire(1)
 );
 
 JK_FF_2: ff_jk
 port map(
-    j => q_wire(0) AND q_wire(1);
-    k => q_wire(0) AND q_wire(1);
-    clrn => not reset_wire;
-    prn => CLAMP_UP;
-    clk => rising_edge(clk_wire);
-    ena => clk_enable_wire;
-    q => q_wire(2);
+    j => and_in_t2,
+    k => and_in_t2,
+    clk => clk_wire,
+    ena => clk_enable_wire,
+    clrn => not_reset_wire,
+    prn => CLAMP_UP,
+    q => q_wire(2)
 );
 
 JK_FF_3: ff_jk
 port map(
-    j => q_wire(0) AND q_wire(1) AND q_wire(2);
-    k => q_wire(0) AND q_wire(1) AND q_wire(2);
-    clrn => not reset_wire;
-    prn => CLAMP_UP;
-    clk => rising_edge(clk_wire);
-    ena => clk_enable_wire;
-    q => q_wire(3);
+    j => and_in_t3,
+    k => and_in_t3,
+    clk => clk_wire,
+    ena => clk_enable_wire,
+    clrn => not_reset_wire,
+    prn => CLAMP_UP,
+    q => q_wire(3)
 );
 
+process(clock)
+begin
+    if rising_edge(clock) then
+        clk_wire <= '1';
+    end if;
+end process;
 
-clk_wire <= clock;
+process(q_wire)
+begin
+    and_in_t2 <= q_wire(0) AND q_wire(1);
+    and_in_t3 <= q_wire(0) AND q_wire(1) AND q_wire(2);
+end process;
+
 clk_enable_wire <= clock_enable;
 reset_wire <= reset;
+not_reset_wire <= not reset;
 q <= q_wire;
 -- Processes go in here
 
