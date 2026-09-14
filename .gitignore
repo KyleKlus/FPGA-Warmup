@@ -1,0 +1,22 @@
+# Ignore everything
+*
+
+## Whitelist
+!*.md
+!*/
+!*.v
+!*.vhd
+!*.vhdl
+!*.vqm
+!*.mpf
+!*.qpf
+!*.qsf
+!*.qrf
+!*.srf
+!*.sdc
+!*.txt
+!*.do
+!*.tcl
+!.gitkeep
+!.gitignore
+*/quartus/db
