@@ -41,7 +41,7 @@ begin
 	wait for T/2;
 	clock_wire <= '1';
 	wait for T/2;
-end process; 
+end process;
 
 
 
@@ -49,8 +49,9 @@ end process;
 -- RESET Process
 process
 begin
-	if reset_accomplished = not '1' then
+	if reset_accomplished = '0' then
 		reset_wire <= '1';
+		reset_accomplished <= '1';
 	elsif reset_accomplished = '1' then
 		reset_wire <= '0';
 	end if;

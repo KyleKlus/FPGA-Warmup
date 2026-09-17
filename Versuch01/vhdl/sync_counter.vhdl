@@ -84,6 +84,8 @@ process(clock)
 begin
     if rising_edge(clock) then
         clk_wire <= '1';
+    else
+    clk_wire <= '0';
     end if;
 end process;
 
