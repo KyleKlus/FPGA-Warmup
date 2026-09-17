@@ -50,15 +50,14 @@ end process;
 process
 begin
 	if reset_accomplished = '0' then
+		wait for 3 * T;
 		reset_wire <= '1';
-		reset_accomplished <= '1';
-	elsif reset_accomplished = '1' then
+		wait for T;
 		reset_wire <= '0';
+		reset_accomplished <= '1';
 	end if;
-
-	wait for T;
+	wait; -- Add this to stop the process after reset is done
 end process;
-
 
 
 -- ENABLE Process
