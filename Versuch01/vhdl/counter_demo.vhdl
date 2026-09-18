@@ -16,7 +16,7 @@ architecture rtl of counter_demo is
 	signal not_key0_n, reduced_clk_wire: std_ulogic;
 	signal q_out_wire: std_ulogic_vector(3 downto 0);
 
-	component enable_gen
+	component enableGen
 		port(
 			resetValue_in : in std_ulogic_vector(25 downto 0);
 			clk : in std_ulogic;
@@ -46,7 +46,7 @@ begin
 -- Logic & Processes
 not_key0_n <= not key0_n;
 
-enable_gen_inst : enable_gen
+enableGen_inst : enableGen
 port map(
 	clk => clock,
 	resetValue_in => std_ulogic_vector(to_unsigned(50000000, 26)),

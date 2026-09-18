@@ -30,7 +30,7 @@ architecture rtl of sync_counter is
     end component;
 
     -- Signals
-    signal clk_wire, clk_enable_wire, reset_wire, not_reset_wire, and_in_t3, and_in_t2: std_ulogic;
+    signal clk_enable_wire, not_reset_wire, and_in_t3, and_in_t2: std_ulogic;
     signal q_wire: std_ulogic_vector(3 downto 0);
 
 begin
@@ -40,7 +40,7 @@ JK_FF_0: ff_jk
 port map(
     j => CLAMP_UP,
     k => CLAMP_UP,
-    clk => clk_wire,
+    clk => clock,
     ena => clk_enable_wire,
     clrn => not_reset_wire,
     prn => CLAMP_UP,
@@ -51,7 +51,7 @@ JK_FF_1: ff_jk
 port map(
     j => q_wire(0),
     k => q_wire(0),
-    clk => clk_wire,
+    clk => clock,
     ena => clk_enable_wire,
     clrn => not_reset_wire,
     prn => CLAMP_UP,
@@ -62,7 +62,7 @@ JK_FF_2: ff_jk
 port map(
     j => and_in_t2,
     k => and_in_t2,
-    clk => clk_wire,
+    clk => clock,
     ena => clk_enable_wire,
     clrn => not_reset_wire,
     prn => CLAMP_UP,
@@ -73,21 +73,12 @@ JK_FF_3: ff_jk
 port map(
     j => and_in_t3,
     k => and_in_t3,
-    clk => clk_wire,
+    clk => clock,
     ena => clk_enable_wire,
     clrn => not_reset_wire,
     prn => CLAMP_UP,
     q => q_wire(3)
 );
-
-process(clock)
-begin
-    if rising_edge(clock) then
-        clk_wire <= '1';
-    else
-    clk_wire <= '0';
-    end if;
-end process;
 
 process(q_wire)
 begin
@@ -96,7 +87,6 @@ begin
 end process;
 
 clk_enable_wire <= clock_enable;
-reset_wire <= reset;
 not_reset_wire <= not reset;
 q <= q_wire;
 -- Processes go in here
