@@ -1,0 +1,843 @@
+// !!!!!! This generated VQM is intended for Academic use or Internal Altera use only !!!!!!
+// Functionality may not be correct on the programmed device or in simulation
+
+
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
+
+// DATE "09/26/2022 17:57:11"
+
+module 	enableGen (
+	resetValue_in,
+	clk,
+	nReset,
+	clkEnable_out);
+input 	[25:0] resetValue_in;
+input 	clk;
+input 	nReset;
+output 	clkEnable_out;
+wire \resetValue_in[0]~input ;
+wire \resetValue_in[1]~input ;
+wire \clk~input ;
+wire \counter_ff[0]~26 ;
+wire \nReset~input ;
+wire \counter_ff[0] ;
+wire \counter_ff[0]~27 ;
+wire \counter_ff[1]~28 ;
+wire \counter_ff[1] ;
+wire \Equal0~0 ;
+wire \resetValue_in[2]~input ;
+wire \resetValue_in[3]~input ;
+wire \counter_ff[1]~29 ;
+wire \counter_ff[2]~30 ;
+wire \counter_ff[2] ;
+wire \counter_ff[2]~31 ;
+wire \counter_ff[3]~32 ;
+wire \counter_ff[3] ;
+wire \Equal0~1 ;
+wire \resetValue_in[4]~input ;
+wire \resetValue_in[5]~input ;
+wire \counter_ff[3]~33 ;
+wire \counter_ff[4]~34 ;
+wire \counter_ff[4] ;
+wire \counter_ff[4]~35 ;
+wire \counter_ff[5]~36 ;
+wire \counter_ff[5] ;
+wire \Equal0~2 ;
+wire \resetValue_in[6]~input ;
+wire \resetValue_in[7]~input ;
+wire \counter_ff[5]~37 ;
+wire \counter_ff[6]~38 ;
+wire \counter_ff[6] ;
+wire \counter_ff[6]~39 ;
+wire \counter_ff[7]~40 ;
+wire \counter_ff[7] ;
+wire \Equal0~3 ;
+wire \Equal0~4 ;
+wire \resetValue_in[8]~input ;
+wire \resetValue_in[9]~input ;
+wire \counter_ff[7]~41 ;
+wire \counter_ff[8]~42 ;
+wire \counter_ff[8] ;
+wire \counter_ff[8]~43 ;
+wire \counter_ff[9]~44 ;
+wire \counter_ff[9] ;
+wire \Equal0~5 ;
+wire \resetValue_in[10]~input ;
+wire \resetValue_in[11]~input ;
+wire \counter_ff[9]~45 ;
+wire \counter_ff[10]~46 ;
+wire \counter_ff[10] ;
+wire \counter_ff[10]~47 ;
+wire \counter_ff[11]~48 ;
+wire \counter_ff[11] ;
+wire \Equal0~6 ;
+wire \resetValue_in[12]~input ;
+wire \resetValue_in[13]~input ;
+wire \counter_ff[11]~49 ;
+wire \counter_ff[12]~50 ;
+wire \counter_ff[12] ;
+wire \counter_ff[12]~51 ;
+wire \counter_ff[13]~52 ;
+wire \counter_ff[13] ;
+wire \Equal0~7 ;
+wire \resetValue_in[14]~input ;
+wire \resetValue_in[15]~input ;
+wire \counter_ff[13]~53 ;
+wire \counter_ff[14]~54 ;
+wire \counter_ff[14] ;
+wire \counter_ff[14]~55 ;
+wire \counter_ff[15]~56 ;
+wire \counter_ff[15] ;
+wire \Equal0~8 ;
+wire \Equal0~9 ;
+wire \resetValue_in[24]~input ;
+wire \resetValue_in[25]~input ;
+wire \counter_ff[15]~57 ;
+wire \counter_ff[16]~58 ;
+wire \counter_ff[16] ;
+wire \counter_ff[16]~59 ;
+wire \counter_ff[17]~60 ;
+wire \counter_ff[17] ;
+wire \counter_ff[17]~61 ;
+wire \counter_ff[18]~62 ;
+wire \counter_ff[18] ;
+wire \counter_ff[18]~63 ;
+wire \counter_ff[19]~64 ;
+wire \counter_ff[19] ;
+wire \counter_ff[19]~65 ;
+wire \counter_ff[20]~66 ;
+wire \counter_ff[20] ;
+wire \counter_ff[20]~67 ;
+wire \counter_ff[21]~68 ;
+wire \counter_ff[21] ;
+wire \counter_ff[21]~69 ;
+wire \counter_ff[22]~70 ;
+wire \counter_ff[22] ;
+wire \counter_ff[22]~71 ;
+wire \counter_ff[23]~72 ;
+wire \counter_ff[23] ;
+wire \counter_ff[23]~73 ;
+wire \counter_ff[24]~74 ;
+wire \counter_ff[24] ;
+wire \counter_ff[24]~75 ;
+wire \counter_ff[25]~76 ;
+wire \counter_ff[25] ;
+wire \Equal0~10 ;
+wire \resetValue_in[16]~input ;
+wire \resetValue_in[17]~input ;
+wire \Equal0~11 ;
+wire \resetValue_in[18]~input ;
+wire \resetValue_in[19]~input ;
+wire \Equal0~12 ;
+wire \resetValue_in[20]~input ;
+wire \resetValue_in[21]~input ;
+wire \Equal0~13 ;
+wire \resetValue_in[22]~input ;
+wire \resetValue_in[23]~input ;
+wire \Equal0~14 ;
+wire \Equal0~15 ;
+wire \Equal0~16 ;
+wire [25:0] counter_ff;
+
+
+wire gnd;
+wire vcc;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+
+
+assign clkEnable_out = \Equal0~16 ;
+
+assign \resetValue_in[0]~input  = resetValue_in[0];
+
+assign \resetValue_in[1]~input  = resetValue_in[1];
+
+assign \clk~input  = clk;
+
+fiftyfivenm_lcell_comb \counter_ff[0]~26_I (
+	.dataa(\counter_ff[0] ),
+	.datad(vcc),
+	.combout(\counter_ff[0]~26 ),
+	.cout(\counter_ff[0]~27 ));
+defparam \counter_ff[0]~26_I .sum_lutc_input = "datac";
+defparam \counter_ff[0]~26_I .lut_mask = "55AA";
+
+assign \nReset~input  = nReset;
+
+dffeas \counter_ff[0]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[0]~26 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[0] ));
+defparam \counter_ff[0]~I .power_up = "low";
+defparam \counter_ff[0]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[1]~28_I (
+	.dataa(\counter_ff[1] ),
+	.datad(vcc),
+	.cin(\counter_ff[0]~27 ),
+	.combout(\counter_ff[1]~28 ),
+	.cout(\counter_ff[1]~29 ));
+defparam \counter_ff[1]~28_I .sum_lutc_input = "cin";
+defparam \counter_ff[1]~28_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[1]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[1]~28 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[1] ));
+defparam \counter_ff[1]~I .power_up = "low";
+defparam \counter_ff[1]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~0_I (
+	.dataa(\resetValue_in[0]~input ),
+	.datab(\resetValue_in[1]~input ),
+	.datac(\counter_ff[1] ),
+	.datad(\counter_ff[0] ),
+	.combout(\Equal0~0 ));
+defparam \Equal0~0_I .sum_lutc_input = "datac";
+defparam \Equal0~0_I .lut_mask = "8241";
+
+assign \resetValue_in[2]~input  = resetValue_in[2];
+
+assign \resetValue_in[3]~input  = resetValue_in[3];
+
+fiftyfivenm_lcell_comb \counter_ff[2]~30_I (
+	.dataa(\counter_ff[2] ),
+	.datad(vcc),
+	.cin(\counter_ff[1]~29 ),
+	.combout(\counter_ff[2]~30 ),
+	.cout(\counter_ff[2]~31 ));
+defparam \counter_ff[2]~30_I .sum_lutc_input = "cin";
+defparam \counter_ff[2]~30_I .lut_mask = "A50A";
+
+dffeas \counter_ff[2]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[2]~30 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[2] ));
+defparam \counter_ff[2]~I .power_up = "low";
+defparam \counter_ff[2]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[3]~32_I (
+	.dataa(\counter_ff[3] ),
+	.datad(vcc),
+	.cin(\counter_ff[2]~31 ),
+	.combout(\counter_ff[3]~32 ),
+	.cout(\counter_ff[3]~33 ));
+defparam \counter_ff[3]~32_I .sum_lutc_input = "cin";
+defparam \counter_ff[3]~32_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[3]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[3]~32 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[3] ));
+defparam \counter_ff[3]~I .power_up = "low";
+defparam \counter_ff[3]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~1_I (
+	.dataa(\resetValue_in[2]~input ),
+	.datab(\resetValue_in[3]~input ),
+	.datac(\counter_ff[3] ),
+	.datad(\counter_ff[2] ),
+	.combout(\Equal0~1 ));
+defparam \Equal0~1_I .sum_lutc_input = "datac";
+defparam \Equal0~1_I .lut_mask = "8241";
+
+assign \resetValue_in[4]~input  = resetValue_in[4];
+
+assign \resetValue_in[5]~input  = resetValue_in[5];
+
+fiftyfivenm_lcell_comb \counter_ff[4]~34_I (
+	.dataa(\counter_ff[4] ),
+	.datad(vcc),
+	.cin(\counter_ff[3]~33 ),
+	.combout(\counter_ff[4]~34 ),
+	.cout(\counter_ff[4]~35 ));
+defparam \counter_ff[4]~34_I .sum_lutc_input = "cin";
+defparam \counter_ff[4]~34_I .lut_mask = "A50A";
+
+dffeas \counter_ff[4]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[4]~34 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[4] ));
+defparam \counter_ff[4]~I .power_up = "low";
+defparam \counter_ff[4]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[5]~36_I (
+	.dataa(\counter_ff[5] ),
+	.datad(vcc),
+	.cin(\counter_ff[4]~35 ),
+	.combout(\counter_ff[5]~36 ),
+	.cout(\counter_ff[5]~37 ));
+defparam \counter_ff[5]~36_I .sum_lutc_input = "cin";
+defparam \counter_ff[5]~36_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[5]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[5]~36 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[5] ));
+defparam \counter_ff[5]~I .power_up = "low";
+defparam \counter_ff[5]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~2_I (
+	.dataa(\resetValue_in[4]~input ),
+	.datab(\resetValue_in[5]~input ),
+	.datac(\counter_ff[5] ),
+	.datad(\counter_ff[4] ),
+	.combout(\Equal0~2 ));
+defparam \Equal0~2_I .sum_lutc_input = "datac";
+defparam \Equal0~2_I .lut_mask = "8241";
+
+assign \resetValue_in[6]~input  = resetValue_in[6];
+
+assign \resetValue_in[7]~input  = resetValue_in[7];
+
+fiftyfivenm_lcell_comb \counter_ff[6]~38_I (
+	.dataa(\counter_ff[6] ),
+	.datad(vcc),
+	.cin(\counter_ff[5]~37 ),
+	.combout(\counter_ff[6]~38 ),
+	.cout(\counter_ff[6]~39 ));
+defparam \counter_ff[6]~38_I .sum_lutc_input = "cin";
+defparam \counter_ff[6]~38_I .lut_mask = "A50A";
+
+dffeas \counter_ff[6]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[6]~38 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[6] ));
+defparam \counter_ff[6]~I .power_up = "low";
+defparam \counter_ff[6]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[7]~40_I (
+	.dataa(\counter_ff[7] ),
+	.datad(vcc),
+	.cin(\counter_ff[6]~39 ),
+	.combout(\counter_ff[7]~40 ),
+	.cout(\counter_ff[7]~41 ));
+defparam \counter_ff[7]~40_I .sum_lutc_input = "cin";
+defparam \counter_ff[7]~40_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[7]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[7]~40 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[7] ));
+defparam \counter_ff[7]~I .power_up = "low";
+defparam \counter_ff[7]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~3_I (
+	.dataa(\resetValue_in[6]~input ),
+	.datab(\resetValue_in[7]~input ),
+	.datac(\counter_ff[7] ),
+	.datad(\counter_ff[6] ),
+	.combout(\Equal0~3 ));
+defparam \Equal0~3_I .sum_lutc_input = "datac";
+defparam \Equal0~3_I .lut_mask = "8241";
+
+fiftyfivenm_lcell_comb \Equal0~4_I (
+	.dataa(\Equal0~0 ),
+	.datab(\Equal0~1 ),
+	.datac(\Equal0~2 ),
+	.datad(\Equal0~3 ),
+	.combout(\Equal0~4 ));
+defparam \Equal0~4_I .sum_lutc_input = "datac";
+defparam \Equal0~4_I .lut_mask = "8000";
+
+assign \resetValue_in[8]~input  = resetValue_in[8];
+
+assign \resetValue_in[9]~input  = resetValue_in[9];
+
+fiftyfivenm_lcell_comb \counter_ff[8]~42_I (
+	.dataa(\counter_ff[8] ),
+	.datad(vcc),
+	.cin(\counter_ff[7]~41 ),
+	.combout(\counter_ff[8]~42 ),
+	.cout(\counter_ff[8]~43 ));
+defparam \counter_ff[8]~42_I .sum_lutc_input = "cin";
+defparam \counter_ff[8]~42_I .lut_mask = "A50A";
+
+dffeas \counter_ff[8]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[8]~42 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[8] ));
+defparam \counter_ff[8]~I .power_up = "low";
+defparam \counter_ff[8]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[9]~44_I (
+	.dataa(\counter_ff[9] ),
+	.datad(vcc),
+	.cin(\counter_ff[8]~43 ),
+	.combout(\counter_ff[9]~44 ),
+	.cout(\counter_ff[9]~45 ));
+defparam \counter_ff[9]~44_I .sum_lutc_input = "cin";
+defparam \counter_ff[9]~44_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[9]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[9]~44 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[9] ));
+defparam \counter_ff[9]~I .power_up = "low";
+defparam \counter_ff[9]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~5_I (
+	.dataa(\resetValue_in[8]~input ),
+	.datab(\resetValue_in[9]~input ),
+	.datac(\counter_ff[9] ),
+	.datad(\counter_ff[8] ),
+	.combout(\Equal0~5 ));
+defparam \Equal0~5_I .sum_lutc_input = "datac";
+defparam \Equal0~5_I .lut_mask = "8241";
+
+assign \resetValue_in[10]~input  = resetValue_in[10];
+
+assign \resetValue_in[11]~input  = resetValue_in[11];
+
+fiftyfivenm_lcell_comb \counter_ff[10]~46_I (
+	.dataa(\counter_ff[10] ),
+	.datad(vcc),
+	.cin(\counter_ff[9]~45 ),
+	.combout(\counter_ff[10]~46 ),
+	.cout(\counter_ff[10]~47 ));
+defparam \counter_ff[10]~46_I .sum_lutc_input = "cin";
+defparam \counter_ff[10]~46_I .lut_mask = "A50A";
+
+dffeas \counter_ff[10]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[10]~46 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[10] ));
+defparam \counter_ff[10]~I .power_up = "low";
+defparam \counter_ff[10]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[11]~48_I (
+	.dataa(\counter_ff[11] ),
+	.datad(vcc),
+	.cin(\counter_ff[10]~47 ),
+	.combout(\counter_ff[11]~48 ),
+	.cout(\counter_ff[11]~49 ));
+defparam \counter_ff[11]~48_I .sum_lutc_input = "cin";
+defparam \counter_ff[11]~48_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[11]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[11]~48 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[11] ));
+defparam \counter_ff[11]~I .power_up = "low";
+defparam \counter_ff[11]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~6_I (
+	.dataa(\resetValue_in[10]~input ),
+	.datab(\resetValue_in[11]~input ),
+	.datac(\counter_ff[11] ),
+	.datad(\counter_ff[10] ),
+	.combout(\Equal0~6 ));
+defparam \Equal0~6_I .sum_lutc_input = "datac";
+defparam \Equal0~6_I .lut_mask = "8241";
+
+assign \resetValue_in[12]~input  = resetValue_in[12];
+
+assign \resetValue_in[13]~input  = resetValue_in[13];
+
+fiftyfivenm_lcell_comb \counter_ff[12]~50_I (
+	.dataa(\counter_ff[12] ),
+	.datad(vcc),
+	.cin(\counter_ff[11]~49 ),
+	.combout(\counter_ff[12]~50 ),
+	.cout(\counter_ff[12]~51 ));
+defparam \counter_ff[12]~50_I .sum_lutc_input = "cin";
+defparam \counter_ff[12]~50_I .lut_mask = "A50A";
+
+dffeas \counter_ff[12]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[12]~50 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[12] ));
+defparam \counter_ff[12]~I .power_up = "low";
+defparam \counter_ff[12]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[13]~52_I (
+	.dataa(\counter_ff[13] ),
+	.datad(vcc),
+	.cin(\counter_ff[12]~51 ),
+	.combout(\counter_ff[13]~52 ),
+	.cout(\counter_ff[13]~53 ));
+defparam \counter_ff[13]~52_I .sum_lutc_input = "cin";
+defparam \counter_ff[13]~52_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[13]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[13]~52 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[13] ));
+defparam \counter_ff[13]~I .power_up = "low";
+defparam \counter_ff[13]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~7_I (
+	.dataa(\resetValue_in[12]~input ),
+	.datab(\resetValue_in[13]~input ),
+	.datac(\counter_ff[13] ),
+	.datad(\counter_ff[12] ),
+	.combout(\Equal0~7 ));
+defparam \Equal0~7_I .sum_lutc_input = "datac";
+defparam \Equal0~7_I .lut_mask = "8241";
+
+assign \resetValue_in[14]~input  = resetValue_in[14];
+
+assign \resetValue_in[15]~input  = resetValue_in[15];
+
+fiftyfivenm_lcell_comb \counter_ff[14]~54_I (
+	.dataa(\counter_ff[14] ),
+	.datad(vcc),
+	.cin(\counter_ff[13]~53 ),
+	.combout(\counter_ff[14]~54 ),
+	.cout(\counter_ff[14]~55 ));
+defparam \counter_ff[14]~54_I .sum_lutc_input = "cin";
+defparam \counter_ff[14]~54_I .lut_mask = "A50A";
+
+dffeas \counter_ff[14]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[14]~54 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[14] ));
+defparam \counter_ff[14]~I .power_up = "low";
+defparam \counter_ff[14]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[15]~56_I (
+	.dataa(\counter_ff[15] ),
+	.datad(vcc),
+	.cin(\counter_ff[14]~55 ),
+	.combout(\counter_ff[15]~56 ),
+	.cout(\counter_ff[15]~57 ));
+defparam \counter_ff[15]~56_I .sum_lutc_input = "cin";
+defparam \counter_ff[15]~56_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[15]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[15]~56 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[15] ));
+defparam \counter_ff[15]~I .power_up = "low";
+defparam \counter_ff[15]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~8_I (
+	.dataa(\resetValue_in[14]~input ),
+	.datab(\resetValue_in[15]~input ),
+	.datac(\counter_ff[15] ),
+	.datad(\counter_ff[14] ),
+	.combout(\Equal0~8 ));
+defparam \Equal0~8_I .sum_lutc_input = "datac";
+defparam \Equal0~8_I .lut_mask = "8241";
+
+fiftyfivenm_lcell_comb \Equal0~9_I (
+	.dataa(\Equal0~5 ),
+	.datab(\Equal0~6 ),
+	.datac(\Equal0~7 ),
+	.datad(\Equal0~8 ),
+	.combout(\Equal0~9 ));
+defparam \Equal0~9_I .sum_lutc_input = "datac";
+defparam \Equal0~9_I .lut_mask = "8000";
+
+assign \resetValue_in[24]~input  = resetValue_in[24];
+
+assign \resetValue_in[25]~input  = resetValue_in[25];
+
+fiftyfivenm_lcell_comb \counter_ff[16]~58_I (
+	.dataa(\counter_ff[16] ),
+	.datad(vcc),
+	.cin(\counter_ff[15]~57 ),
+	.combout(\counter_ff[16]~58 ),
+	.cout(\counter_ff[16]~59 ));
+defparam \counter_ff[16]~58_I .sum_lutc_input = "cin";
+defparam \counter_ff[16]~58_I .lut_mask = "A50A";
+
+dffeas \counter_ff[16]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[16]~58 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[16] ));
+defparam \counter_ff[16]~I .power_up = "low";
+defparam \counter_ff[16]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[17]~60_I (
+	.dataa(\counter_ff[17] ),
+	.datad(vcc),
+	.cin(\counter_ff[16]~59 ),
+	.combout(\counter_ff[17]~60 ),
+	.cout(\counter_ff[17]~61 ));
+defparam \counter_ff[17]~60_I .sum_lutc_input = "cin";
+defparam \counter_ff[17]~60_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[17]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[17]~60 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[17] ));
+defparam \counter_ff[17]~I .power_up = "low";
+defparam \counter_ff[17]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[18]~62_I (
+	.dataa(\counter_ff[18] ),
+	.datad(vcc),
+	.cin(\counter_ff[17]~61 ),
+	.combout(\counter_ff[18]~62 ),
+	.cout(\counter_ff[18]~63 ));
+defparam \counter_ff[18]~62_I .sum_lutc_input = "cin";
+defparam \counter_ff[18]~62_I .lut_mask = "A50A";
+
+dffeas \counter_ff[18]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[18]~62 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[18] ));
+defparam \counter_ff[18]~I .power_up = "low";
+defparam \counter_ff[18]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[19]~64_I (
+	.dataa(\counter_ff[19] ),
+	.datad(vcc),
+	.cin(\counter_ff[18]~63 ),
+	.combout(\counter_ff[19]~64 ),
+	.cout(\counter_ff[19]~65 ));
+defparam \counter_ff[19]~64_I .sum_lutc_input = "cin";
+defparam \counter_ff[19]~64_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[19]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[19]~64 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[19] ));
+defparam \counter_ff[19]~I .power_up = "low";
+defparam \counter_ff[19]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[20]~66_I (
+	.dataa(\counter_ff[20] ),
+	.datad(vcc),
+	.cin(\counter_ff[19]~65 ),
+	.combout(\counter_ff[20]~66 ),
+	.cout(\counter_ff[20]~67 ));
+defparam \counter_ff[20]~66_I .sum_lutc_input = "cin";
+defparam \counter_ff[20]~66_I .lut_mask = "A50A";
+
+dffeas \counter_ff[20]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[20]~66 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[20] ));
+defparam \counter_ff[20]~I .power_up = "low";
+defparam \counter_ff[20]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[21]~68_I (
+	.dataa(\counter_ff[21] ),
+	.datad(vcc),
+	.cin(\counter_ff[20]~67 ),
+	.combout(\counter_ff[21]~68 ),
+	.cout(\counter_ff[21]~69 ));
+defparam \counter_ff[21]~68_I .sum_lutc_input = "cin";
+defparam \counter_ff[21]~68_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[21]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[21]~68 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[21] ));
+defparam \counter_ff[21]~I .power_up = "low";
+defparam \counter_ff[21]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[22]~70_I (
+	.dataa(\counter_ff[22] ),
+	.datad(vcc),
+	.cin(\counter_ff[21]~69 ),
+	.combout(\counter_ff[22]~70 ),
+	.cout(\counter_ff[22]~71 ));
+defparam \counter_ff[22]~70_I .sum_lutc_input = "cin";
+defparam \counter_ff[22]~70_I .lut_mask = "A50A";
+
+dffeas \counter_ff[22]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[22]~70 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[22] ));
+defparam \counter_ff[22]~I .power_up = "low";
+defparam \counter_ff[22]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[23]~72_I (
+	.dataa(\counter_ff[23] ),
+	.datad(vcc),
+	.cin(\counter_ff[22]~71 ),
+	.combout(\counter_ff[23]~72 ),
+	.cout(\counter_ff[23]~73 ));
+defparam \counter_ff[23]~72_I .sum_lutc_input = "cin";
+defparam \counter_ff[23]~72_I .lut_mask = "5A5F";
+
+dffeas \counter_ff[23]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[23]~72 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[23] ));
+defparam \counter_ff[23]~I .power_up = "low";
+defparam \counter_ff[23]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[24]~74_I (
+	.dataa(\counter_ff[24] ),
+	.datad(vcc),
+	.cin(\counter_ff[23]~73 ),
+	.combout(\counter_ff[24]~74 ),
+	.cout(\counter_ff[24]~75 ));
+defparam \counter_ff[24]~74_I .sum_lutc_input = "cin";
+defparam \counter_ff[24]~74_I .lut_mask = "A50A";
+
+dffeas \counter_ff[24]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[24]~74 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[24] ));
+defparam \counter_ff[24]~I .power_up = "low";
+defparam \counter_ff[24]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \counter_ff[25]~76_I (
+	.dataa(\counter_ff[25] ),
+	.cin(\counter_ff[24]~75 ),
+	.combout(\counter_ff[25]~76 ));
+defparam \counter_ff[25]~76_I .sum_lutc_input = "cin";
+defparam \counter_ff[25]~76_I .lut_mask = "5A5A";
+
+dffeas \counter_ff[25]~I (
+	.clk(\clk~input ),
+	.d(\counter_ff[25]~76 ),
+	.clrn(\nReset~input ),
+	.sclr(\Equal0~16 ),
+	.q(\counter_ff[25] ));
+defparam \counter_ff[25]~I .power_up = "low";
+defparam \counter_ff[25]~I .is_wysiwyg = "true";
+
+fiftyfivenm_lcell_comb \Equal0~10_I (
+	.dataa(\resetValue_in[24]~input ),
+	.datab(\resetValue_in[25]~input ),
+	.datac(\counter_ff[25] ),
+	.datad(\counter_ff[24] ),
+	.combout(\Equal0~10 ));
+defparam \Equal0~10_I .sum_lutc_input = "datac";
+defparam \Equal0~10_I .lut_mask = "8241";
+
+assign \resetValue_in[16]~input  = resetValue_in[16];
+
+assign \resetValue_in[17]~input  = resetValue_in[17];
+
+fiftyfivenm_lcell_comb \Equal0~11_I (
+	.dataa(\resetValue_in[16]~input ),
+	.datab(\resetValue_in[17]~input ),
+	.datac(\counter_ff[17] ),
+	.datad(\counter_ff[16] ),
+	.combout(\Equal0~11 ));
+defparam \Equal0~11_I .sum_lutc_input = "datac";
+defparam \Equal0~11_I .lut_mask = "8241";
+
+assign \resetValue_in[18]~input  = resetValue_in[18];
+
+assign \resetValue_in[19]~input  = resetValue_in[19];
+
+fiftyfivenm_lcell_comb \Equal0~12_I (
+	.dataa(\resetValue_in[18]~input ),
+	.datab(\resetValue_in[19]~input ),
+	.datac(\counter_ff[19] ),
+	.datad(\counter_ff[18] ),
+	.combout(\Equal0~12 ));
+defparam \Equal0~12_I .sum_lutc_input = "datac";
+defparam \Equal0~12_I .lut_mask = "8241";
+
+assign \resetValue_in[20]~input  = resetValue_in[20];
+
+assign \resetValue_in[21]~input  = resetValue_in[21];
+
+fiftyfivenm_lcell_comb \Equal0~13_I (
+	.dataa(\resetValue_in[20]~input ),
+	.datab(\resetValue_in[21]~input ),
+	.datac(\counter_ff[21] ),
+	.datad(\counter_ff[20] ),
+	.combout(\Equal0~13 ));
+defparam \Equal0~13_I .sum_lutc_input = "datac";
+defparam \Equal0~13_I .lut_mask = "8241";
+
+assign \resetValue_in[22]~input  = resetValue_in[22];
+
+assign \resetValue_in[23]~input  = resetValue_in[23];
+
+fiftyfivenm_lcell_comb \Equal0~14_I (
+	.dataa(\resetValue_in[22]~input ),
+	.datab(\resetValue_in[23]~input ),
+	.datac(\counter_ff[23] ),
+	.datad(\counter_ff[22] ),
+	.combout(\Equal0~14 ));
+defparam \Equal0~14_I .sum_lutc_input = "datac";
+defparam \Equal0~14_I .lut_mask = "8241";
+
+fiftyfivenm_lcell_comb \Equal0~15_I (
+	.dataa(\Equal0~11 ),
+	.datab(\Equal0~12 ),
+	.datac(\Equal0~13 ),
+	.datad(\Equal0~14 ),
+	.combout(\Equal0~15 ));
+defparam \Equal0~15_I .sum_lutc_input = "datac";
+defparam \Equal0~15_I .lut_mask = "8000";
+
+fiftyfivenm_lcell_comb \Equal0~16_I (
+	.dataa(\Equal0~4 ),
+	.datab(\Equal0~9 ),
+	.datac(\Equal0~10 ),
+	.datad(\Equal0~15 ),
+	.combout(\Equal0~16 ));
+defparam \Equal0~16_I .sum_lutc_input = "datac";
+defparam \Equal0~16_I .lut_mask = "8000";
+
+endmodule
