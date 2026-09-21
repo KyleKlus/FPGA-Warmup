@@ -147,7 +147,6 @@ architecture rtl of fpga_audiofx is
   signal i2c_error         : std_ulogic;
 
 begin
-
   -- invert reset-extern signal
   reset_extern <= not reset_n_extern;
 
@@ -231,5 +230,11 @@ begin
       aout_right_sync => aout_right_sync,
       aout_right_data => aout_right_data
       );
+
+  -- connecting input to output
+      aout_left_data <= ain_left_data;
+      aout_left_sync <= ain_left_sync;
+      aout_right_data <= ain_right_data;
+      aout_right_sync <= ain_right_sync;
 
 end architecture rtl;
