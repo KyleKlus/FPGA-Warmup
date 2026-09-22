@@ -87,6 +87,20 @@ architecture rtl of fpga_audiofx is
   signal aout_right_sync : std_ulogic;
   signal aout_right_data : std_ulogic;
 
+  -- test component for s2p
+  component test is
+  port(
+    clock     : in  std_ulogic;
+    reset     : in  std_ulogic;
+    -- serial audio-data signals
+    ain_sync  : in  std_ulogic;
+    ain_data  : in  std_ulogic;
+    -- serial audio-data signals
+    aout_sync : out std_ulogic;
+    aout_data : out std_ulogic
+  );
+  end component test;
+
   -- connection signals between the WM8731-Configurator and I2C-Master
   component i2c_master is
     port (
@@ -231,5 +245,26 @@ begin
       aout_right_sync => aout_right_sync,
       aout_right_data => aout_right_data
       );
+
+  -- testing s2p with test component
+  test_l_inst:test
+  port map(
+    clock => clock_50,
+    reset => reset,
+    ain_sync => ain_left_sync,
+    ain_data => ain_left_data,
+    aout_sync => aout_left_sync,
+    aout_data => aout_left_data
+  );
+
+  test_r_inst:test
+  port map(
+    clock => clock_50,
+    reset => reset,
+    ain_sync => ain_right_sync,
+    ain_data => ain_right_data,
+    aout_sync => aout_right_sync,
+    aout_data => aout_right_data
+  );
 
 end architecture rtl;
