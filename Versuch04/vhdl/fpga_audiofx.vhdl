@@ -17,6 +17,8 @@ use ieee.numeric_std.all;
 library work;
 use work.fpga_audiofx_pkg.all;
 
+-- There are 11,25 us to process one channel sample -> 500 cycles
+
 entity fpga_audiofx is
   port (
     -- global
