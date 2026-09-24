@@ -24,7 +24,7 @@ architecture rtl of test is
     signal smp_data  : std_ulogic_vector(SAMPLE_WIDTH-1 downto 0);
 
     -- internal s2p and p2s components
-    component s2p is
+    component s2p_unit is
         port(
             clock     : in  std_ulogic;
             reset     : in  std_ulogic;
@@ -36,9 +36,9 @@ architecture rtl of test is
             smp_ack   : in  std_ulogic;
             smp_data  : out std_ulogic_vector(SAMPLE_WIDTH-1 downto 0)
         );
-    end component s2p;
+    end component s2p_unit;
 
-    component p2s is
+    component p2s_unit is
         port(
             clock     : in  std_ulogic;
             reset     : in  std_ulogic;
@@ -50,10 +50,10 @@ architecture rtl of test is
             aout_sync : out std_ulogic;
             aout_data : out std_ulogic
         );
-    end component p2s;
+    end component p2s_unit;
 begin
 
-s2p_inst : s2p
+s2p_inst : s2p_unit
 port map(
     clock => clock,
     reset => reset,
@@ -64,7 +64,7 @@ port map(
     smp_data => smp_data
 );
 
-p2s_inst : p2s
+p2s_inst : p2s_unit
 port map(
     clock => clock,
     reset => reset,

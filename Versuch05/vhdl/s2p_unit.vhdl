@@ -34,7 +34,7 @@ architecture rtl of s2p_unit is
   -- bit counter signals
   signal bit_cnt, bit_cnt_next : unsigned(to_log2(SAMPLE_WIDTH)-1 downto 0);
   signal cnt_reset: std_ulogic;
-  signal nload, nload_next: std_ulogic;
+  signal nload: std_ulogic;
 
   -- fsm signals
   type state_t is (IDLE, GET_DATA, WAIT_ACK);
@@ -42,22 +42,17 @@ architecture rtl of s2p_unit is
   signal din_en, dout_en: std_ulogic;
 
   -- shift register
-  signal sample, sample_next : std_ulogic_vector(to_log2(SAMPLE_WIDTH)-1 downto 0);
+  signal sample, sample_next : std_ulogic_vector(SAMPLE_WIDTH-1 downto 0);
 begin
 
 ff : process(clock, reset)
 begin
   if reset = '1' then
     bit_cnt <= (others => '0');
-    nload <= '0';
-    cnt_reset <= '0';
-    din_en <= '0';
-    dout_en <= '0';
-    smp_valid <= '0';
     state <= IDLE;
+    sample <= (others=>'0');
   elsif rising_edge(clock) then
     bit_cnt <= bit_cnt_next;
-    nload <= nload_next;
     state <= state_next;
     sample <= sample_next;
   end if;
@@ -65,8 +60,22 @@ end process ff;
 
 bit_counter : process(bit_cnt, cnt_reset)
 begin
-  bit_cnt_next <= bit_cnt + 1 when cnt_reset = not '1' else (others => '0');
-  nload_next <= '1' when bit_cnt + 1 = SAMPLE_WIDTH-1 and cnt_reset = not '1' else '0';
+  bit_cnt_next <= bit_cnt;
+  nload <= '0';
+
+  if cnt_reset = '1' then
+    bit_cnt_next <= (others => '0');
+    nload <= '0';
+  elsif bit_cnt = SAMPLE_WIDTH-1 then
+    bit_cnt_next <= bit_cnt;
+    nload <= '1';
+  elsif bit_cnt = SAMPLE_WIDTH-2 then
+    nload <= '1';
+    bit_cnt_next <= bit_cnt + 1;
+  elsif bit_cnt <= SAMPLE_WIDTH-3 then
+    nload <= '0';
+    bit_cnt_next <= bit_cnt + 1;
+  end if;
 end process bit_counter;
 
 fsm: process(state, ain_sync, nload, smp_ack)
@@ -99,7 +108,7 @@ begin
     when WAIT_ACK =>
       -- all bits read -> make them available
       dout_en <= '1';
-      smp_valid <= '0';
+      smp_valid <= '1';
 
       if ain_sync = '1' then
         -- new sample coming in
