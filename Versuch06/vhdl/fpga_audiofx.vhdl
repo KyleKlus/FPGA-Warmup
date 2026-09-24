@@ -146,6 +146,22 @@ architecture rtl of fpga_audiofx is
   signal i2c_rx_data_en    : std_ulogic;
   signal i2c_error         : std_ulogic;
 
+  component mixer_unit is
+  port(
+    clock     : in  std_ulogic;
+    reset     : in  std_ulogic;
+    -- serial audio-data inputs
+    ain_sync  : in  std_ulogic_vector(1 downto 0);
+    ain_data  : in  std_ulogic_vector(1 downto 0);
+    -- serial audio-data output
+    aout_sync : out std_ulogic;
+    aout_data : out std_ulogic
+  );
+  end component mixer_unit;
+
+  signal ain_sync_packaged : std_ulogic_vector(1 downto 0);
+  signal ain_data_packaged : std_ulogic_vector(1 downto 0);
+
 begin
 
   -- invert reset-extern signal
@@ -231,5 +247,18 @@ begin
       aout_right_sync => aout_right_sync,
       aout_right_data => aout_right_data
       );
+
+  ain_data_packaged <= (ain_left_data, ain_right_data);
+  ain_sync_packaged <= (ain_left_sync, ain_right_sync);
+
+  mixer_unit_inst: mixer_unit
+   port map(
+      clock => clock_50,
+      reset => reset,
+      ain_sync => ain_sync_packaged,
+      ain_data => ain_data_packaged,
+      aout_sync => aout_right_sync,
+      aout_data => aout_right_data
+  );
 
 end architecture rtl;
